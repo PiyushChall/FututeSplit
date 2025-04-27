@@ -187,14 +187,14 @@ export default function ChatPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-950 dark:to-blue-950 font-sans rounded-xl">
-      <header className="py-6 bg-blue-600 shadow-lg text-white text-center font-bold text-2xl tracking-wide drop-shadow-lg bg-gradient-to-r from-blue-500 to-blue-700">
+      <header className="py-4 sm:py-6 bg-blue-600 shadow-lg text-white text-center font-bold text-xl sm:text-2xl tracking-wide drop-shadow-lg bg-gradient-to-r from-blue-500 to-blue-700">
         FutureSplit Chat
       </header>
-      <main className="flex-1 flex flex-col items-center justify-center py-4 px-2 w-full">
+      <main className="flex-1 flex flex-col items-center justify-center py-2 sm:py-4 px-1 sm:px-2 w-full">
         {onboarding ? (
           <form
             onSubmit={handleOnboarding}
-            className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 max-w-md w-full flex flex-col gap-5 animate-fade-in-up"
+            className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 sm:p-8 max-w-md w-full flex flex-col gap-4 sm:gap-5 animate-fade-in-up"
           >
             <h2 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">Let's get to know you!</h2>
             <label className="font-medium text-gray-700 dark:text-gray-200">What is your main future goal?</label>
@@ -237,24 +237,24 @@ export default function ChatPage() {
         ) : (
           <>
             {/* Persona cards at the top */}
-            <div className="flex flex-wrap justify-center gap-8 mb-8 w-full max-w-2xl">
-              <div className="bg-green-50 dark:bg-green-900 border-2 border-green-600 rounded-2xl p-6 min-w-[180px] flex flex-col items-center shadow-md">
-                <div className="mb-2 w-16 h-16 rounded-full bg-white flex items-center justify-center border-4 border-green-300 dark:border-green-700 overflow-hidden">
-                  {useEmoji ? successAvatar : <img src={successAvatar} alt="Success Avatar" className="w-14 h-14 rounded-full" />}
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mb-6 sm:mb-8 w-full max-w-lg sm:max-w-2xl">
+              <div className="bg-green-50 dark:bg-green-900 border-2 border-green-600 rounded-2xl p-3 sm:p-6 min-w-[120px] sm:min-w-[180px] flex flex-col items-center shadow-md">
+                <div className="mb-2 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white flex items-center justify-center border-4 border-green-300 dark:border-green-700 overflow-hidden">
+                  {useEmoji ? successAvatar : <img src={successAvatar} alt="Success Avatar" className="w-10 h-10 sm:w-14 sm:h-14 rounded-full" />}
                 </div>
-                <div className="font-bold text-green-700 dark:text-green-300">Success You</div>
+                <div className="font-bold text-green-700 dark:text-green-300 text-sm sm:text-base">Success You</div>
                 <div className="text-xs text-green-800 dark:text-green-200 mt-1">Achieved your goal</div>
               </div>
-              <div className="bg-red-50 dark:bg-red-900 border-2 border-red-600 rounded-2xl p-6 min-w-[180px] flex flex-col items-center shadow-md">
-                <div className="mb-2 w-16 h-16 rounded-full bg-white flex items-center justify-center border-4 border-red-300 dark:border-red-700 overflow-hidden">
-                  {useEmoji ? failureAvatar : <img src={failureAvatar} alt="Failure Avatar" className="w-14 h-14 rounded-full" />}
+              <div className="bg-red-50 dark:bg-red-900 border-2 border-red-600 rounded-2xl p-3 sm:p-6 min-w-[120px] sm:min-w-[180px] flex flex-col items-center shadow-md">
+                <div className="mb-2 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white flex items-center justify-center border-4 border-red-300 dark:border-red-700 overflow-hidden">
+                  {useEmoji ? failureAvatar : <img src={failureAvatar} alt="Failure Avatar" className="w-10 h-10 sm:w-14 sm:h-14 rounded-full" />}
                 </div>
-                <div className="font-bold text-red-700 dark:text-red-300">Failure You</div>
+                <div className="font-bold text-red-700 dark:text-red-300 text-sm sm:text-base">Failure You</div>
                 <div className="text-xs text-red-800 dark:text-red-200 mt-1">Did not achieve your goal</div>
               </div>
             </div>
             {/* Chat messages */}
-            <div className="flex flex-col gap-4 w-full max-w-2xl mb-4">
+            <div className="flex flex-col gap-2 sm:gap-4 w-full max-w-lg sm:max-w-2xl mb-2 sm:mb-4 px-1 sm:px-0">
               {messages.map((msg, idx) => (
                 <div
                   key={idx}
@@ -268,23 +268,23 @@ export default function ChatPage() {
                   }
                 >
                   {msg.sender !== "user" && (
-                    <span className="flex items-end mr-2">
+                    <span className="flex items-end mr-1 sm:mr-2">
                       {msg.sender === "success"
                         ? useEmoji
                           ? successAvatar
-                          : <img src={successAvatar} alt="Success Avatar" className="w-8 h-8 rounded-full border-2 border-green-400 dark:border-green-700" />
+                          : <img src={successAvatar} alt="Success Avatar" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-green-400 dark:border-green-700" />
                         : useEmoji
                         ? failureAvatar
-                        : <img src={failureAvatar} alt="Failure Avatar" className="w-8 h-8 rounded-full border-2 border-red-400 dark:border-red-700" />}
+                        : <img src={failureAvatar} alt="Failure Avatar" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-red-400 dark:border-red-700" />}
                     </span>
                   )}
                   <div
                     className={
                       msg.sender === "user"
-                        ? "bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-2xl shadow-md px-6 py-3 max-w-[75%] text-base font-medium"
+                        ? "bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-2xl shadow-md px-3 sm:px-6 py-2 sm:py-3 max-w-[85%] sm:max-w-[75%] text-sm sm:text-base font-medium"
                         : msg.sender === "success"
-                        ? "bg-green-600 dark:bg-green-700 text-white rounded-2xl shadow-md px-6 py-3 max-w-[75%] text-base font-medium border-2 border-green-700 dark:border-green-700"
-                        : "bg-red-600 dark:bg-red-700 text-white rounded-2xl shadow-md px-6 py-3 max-w-[75%] text-base font-medium border-2 border-red-700 dark:border-red-700"
+                        ? "bg-green-600 dark:bg-green-700 text-white rounded-2xl shadow-md px-3 sm:px-6 py-2 sm:py-3 max-w-[85%] sm:max-w-[75%] text-sm sm:text-base font-medium border-2 border-green-700 dark:border-green-700"
+                        : "bg-red-600 dark:bg-red-700 text-white rounded-2xl shadow-md px-3 sm:px-6 py-2 sm:py-3 max-w-[85%] sm:max-w-[75%] text-sm sm:text-base font-medium border-2 border-red-700 dark:border-red-700"
                     }
                     style={{ position: "relative", opacity: msg.text === "..." ? 0.6 : 1 }}
                   >
@@ -327,19 +327,19 @@ export default function ChatPage() {
       {!onboarding && (
         <form
           onSubmit={handleSend}
-          className="flex p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 max-w-2xl mx-auto w-full rounded-3xl shadow-lg mb-6"
+          className="flex p-2 sm:p-4 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 max-w-lg sm:max-w-2xl mx-auto w-full rounded-3xl shadow-lg mb-4 sm:mb-6"
         >
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your message..."
-            className="flex-1 p-3 rounded-2xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-blue-700 text-base mr-3 transition"
+            className="flex-1 p-2 sm:p-3 rounded-2xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-blue-700 text-sm sm:text-base mr-2 sm:mr-3 transition"
             disabled={loading}
           />
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-2xl py-3 px-6 transition disabled:bg-blue-300"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-2xl py-2 sm:py-3 px-4 sm:px-6 transition disabled:bg-blue-300 text-sm sm:text-base"
             disabled={loading}
           >
             {loading ? "Sending..." : "Send"}
