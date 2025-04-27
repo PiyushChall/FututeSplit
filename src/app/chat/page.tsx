@@ -57,7 +57,7 @@ export default function ChatPage() {
       },
       {
         sender: "failure",
-        text: `Hi... I'm your future self who failed to achieve the goal: "${goal}". I'll share my regrets and what went wrong, so you can avoid my mistakes.`,
+        text: `Hi... I&apos;m your future self who failed to achieve the goal: "${goal}". I&apos;ll share my regrets and what went wrong, so you can avoid my mistakes.`,
       },
       {
         sender: "user",
@@ -302,7 +302,7 @@ export default function ChatPage() {
                       <button
                         onClick={() => {
                           if (typeof window !== "undefined" && window.speechSynthesis) window.speechSynthesis.cancel();
-                          speak(msg.text, gender, undefined, idx);
+                          speak(msg.text, gender, undefined);
                         }}
                         className={
                           msg.sender === "success"
