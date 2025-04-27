@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🚀 FutureSplit
+Two futures. One choice. Get advice from both your successful and failed future selves.
 
-## Getting Started
+🌟 About FutureSplit
+FutureSplit is a unique AI-powered web app where users can:
 
-First, run the development server:
+Input their life goal.
 
-```bash
+Describe their current personality.
+
+Instantly chat with two AI personas:
+
+Success You — your future self who achieved your dream.
+
+Failure You — your future self who failed to achieve it.
+
+Both personas share honest advice, lessons, and reflections to help guide your real-world journey.
+
+🛠️ Built With
+Frontend: Vibe Coding (React + TailwindCSS)
+
+Backend: Supabase (auth, database)
+
+AI Models: OpenRouter API (free-tier models)
+
+Hosting: Vercel
+
+📑 Features
+✍️ Goal and personality input form
+
+🧠 Dual AI chat experience (Success You & Failure You)
+
+🔒 Email authentication (via Supabase)
+
+📜 Save and view chat histories
+
+🎨 Simple, mobile-responsive UI
+
+🧩 Folder Structure
+bash
+Copy
+Edit
+/components   → UI Components (ChatBox, InputForms, etc.)
+/pages        → Application pages (Home, Chat, Profile)
+/lib          → Utility functions (API handlers, prompts)
+/db           → Database config and queries
+/public       → Static files (logo, favicon, etc.)
+🚀 How to Run Locally
+Clone the repo:
+
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/futuresplit.git
+cd futuresplit
+Install dependencies:
+
+bash
+Copy
+Edit
+npm install
+Set up environment variables:
+
+Supabase URL and Anon Key
+
+OpenRouter API Key
+
+Run the dev server:
+
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+💡 Future Improvements
+Add more future personas (optimist, pessimist, realist versions)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Customize AI response tones
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Weekly future check-ins
 
-## Learn More
+Share future dialogues publicly (with user consent)
 
-To learn more about Next.js, take a look at the following resources:
+💸 Monetization Plan
+Freemium model: free chats + paid "Deep Future Sessions"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Subscription for enhanced AI personalities
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Affiliate tie-ins (coaching, productivity tools)
 
-## Deploy on Vercel
+🧠 Credits
+Built by [Your Name]
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Powered by OpenRouter and Supabase
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📜 License
+MIT License — free to use, modify, and share.
+
+🌟 "Your future has already spoken. Now, what will you do?"
