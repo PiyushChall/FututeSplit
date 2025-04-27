@@ -255,9 +255,9 @@ export default function ChatPage() {
             </div>
             {/* Chat messages */}
             <div className="flex flex-col gap-2 sm:gap-4 w-full max-w-lg sm:max-w-2xl mb-2 sm:mb-4 px-1 sm:px-0">
-              {messages.map((msg, idx) => (
+              {messages.map((msg) => (
                 <div
-                  key={idx}
+                  key={msg.text}
                   className={
                     (msg.sender === "user"
                       ? "flex justify-end"
