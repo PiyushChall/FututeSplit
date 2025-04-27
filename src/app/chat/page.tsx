@@ -38,10 +38,8 @@ export default function ChatPage() {
   const [loading, setLoading] = useState(false);
   const [useEmoji, setUseEmoji] = useState(false); // fallback if avatar fails
   const chatEndRef = useRef<HTMLDivElement>(null);
-  const lastSpokenRef = useRef<number>(-1); // index of last spoken message
   const [voicesReady, setVoicesReady] = useState(false);
   const speechQueue = useRef<{text: string, gender: string, onEnd?: () => void}[]>([]);
-  const [playingIdx, setPlayingIdx] = useState<number | null>(null);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -101,7 +99,7 @@ export default function ChatPage() {
         { sender: "success", text: data.successText || "[No response from Success You]" },
         { sender: "failure", text: data.failureText || "[No response from Failure You]" },
       ]);
-    } catch (err) {
+    } catch {
       setMessages((prev) => [
         ...prev.slice(0, -2),
         { sender: "success", text: "[Error: Failed to get response from Success You]" },
@@ -182,10 +180,8 @@ export default function ChatPage() {
     utter.rate = 1;
     utter.pitch = 1;
     utter.onend = () => {
-      setPlayingIdx(null);
       if (onEnd) onEnd();
     };
-    setPlayingIdx(idx ?? null);
     window.speechSynthesis.speak(utter);
   }
 

@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
   function formatMessages(systemPrompt: string) {
     return [
       { role: 'model', parts: [{ text: systemPrompt }] },
-      ...history.map((msg: any) => ({
+      ...history.map((msg: { sender: 'user' | 'ai'; text: string }) => ({
         role: msg.sender === 'user' ? 'user' : 'model',
         parts: [{ text: msg.text }],
       })),
@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
       getPersonaResponse(systemPromptFailure),
     ]);
     return NextResponse.json({ successText, failureText });
-  } catch (err) {
+  } catch {
     return NextResponse.json({ error: 'Failed to fetch from Gemini.' }, { status: 500 });
   }
 } 
