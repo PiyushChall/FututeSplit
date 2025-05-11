@@ -82,15 +82,9 @@ Weekly future check-ins
 
 Share future dialogues publicly (with user consent)
 
-💸 Monetization Plan
-Freemium model: free chats + paid "Deep Future Sessions"
-
-Subscription for enhanced AI personalities
-
-Affiliate tie-ins (coaching, productivity tools)
 
 🧠 Credits
-Built by [Your Name]
+Built by PiyushChall
 
 Powered by OpenRouter and Supabase
 
